@@ -9,6 +9,11 @@ if (acceso) {
     console.log("Acceso denegado ");
 }
 export function procesarReserva(cliente: string, total: number): string {
+ console.log(`Procesando reserva para ${cliente}.`);
+ let puntosGanados = Math.floor(total / 10);
+ console.log(` El cliente ${cliente} ha ganado ${puntosGanados} puntos.`);
+
+ return "Reserva  completada correctamente con puntos de recompensa.";
     console.log(`Procesando reserva para ${cliente}.`);
     let descuento = 0;
     if (cliente === "Juan Pérez") {
@@ -16,6 +21,6 @@ export function procesarReserva(cliente: string, total: number): string {
         total -= descuento;
         console.log(` Descuento aplicado de ${descuento.toFixed(2)} €`);
     }
-    console.log(`Total a pagar: ${total} €`);
+  
     return "Reserva completada correctamente con descuento.";
 }
